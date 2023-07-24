@@ -1,20 +1,20 @@
 		/* See LICENSE file for copyright and license*/
 
 /* appearance */
-static const unsigned int borderpx  = 5; /* border pixel of windows */
-static const unsigned int gappx     = 32;
+static const unsigned int borderpx  = 4; /* border pixel of windows */
+static const unsigned int gappx     = 6;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "SpaceMono-Regular:size=14","Symbols-Nerdfont:size=16"};
-static const char dmenufont[]       = "SpaceMono-Regular:size=14";
+static const char *fonts[]          = {"Fira Code:size=21"};
+static const char dmenufont[]       = "Fira Code:size=21";
 /* Set colors for dwm */
 static const char norm_fg[]         = "#040404";
 static const char norm_bg[]         = "#a1a1a1";
 static const char norm_border[]     = "#595959";
 static const char sel_fg[]          = "#040404";
-static const char sel_bg[]          = "#a1a1a1";
-static const char sel_border[]      = "#595959";
+static const char sel_bg[]          = "#484848";
+static const char sel_border[]      = "#B0D7FF";
 static const char *colors[][3]      = {
     /*               fg       bg       border   */
     [SchemeNorm] = { norm_fg, norm_bg, norm_border },
@@ -23,7 +23,7 @@ static const char *colors[][3]      = {
 
 
 /* tagging */
-static const char *tags[] = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]" };
+static const char *tags[] = { "", "", "", "󰻠", "", "󰭻"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
