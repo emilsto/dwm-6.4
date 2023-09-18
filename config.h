@@ -1,20 +1,20 @@
 		/* See LICENSE file for copyright and license*/
 
 /* appearance */
-static const unsigned int borderpx  = 4; /* border pixel of windows */
+static const unsigned int borderpx  = 2; /* border pixel of windows */
 static const unsigned int gappx     = 6;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"Fira Code:size=16"};
 static const char dmenufont[]       = "Fira Code:size=16";
 /* Set colors for dwm */
-static const char norm_fg[]         = "#040404";
-static const char norm_bg[]         = "#a1a1a1";
-static const char norm_border[]     = "#595959";
-static const char sel_fg[]          = "#040404";
-static const char sel_bg[]          = "#484848";
-static const char sel_border[]      = "#B0D7FF";
+static const char norm_fg[]         = "#e0def4";
+static const char norm_bg[]         = "#393552";
+static const char norm_border[]     = "#6e6a86";
+static const char sel_fg[]          = "#f6c177";
+static const char sel_bg[]          = "#232136";
+static const char sel_border[]      = "#3e8fb0";
 static const char *colors[][3]      = {
     /*               fg       bg       border   */
     [SchemeNorm] = { norm_fg, norm_bg, norm_border },
@@ -61,12 +61,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn",dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "wezterm", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -76,7 +76,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -93,9 +93,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_q,                      3)
-	TAGKEYS(                        XK_w,                      4)
-	TAGKEYS(                        XK_e,                      5)
+	TAGKEYS(                        XK_w,                      3)
+	TAGKEYS(                        XK_e,                      4)
+	TAGKEYS(                        XK_r,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
